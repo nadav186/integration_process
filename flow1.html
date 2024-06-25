@@ -1,132 +1,118 @@
-<html> 
+<!DOCTYPE html>
+<html lang="he">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תרשים זרימה גרפי</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 0;
+        }
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .step {
+            background-color: #ffffff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 60%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.2s;
+        }
+        .step:hover {
+            transform: scale(1.05);
+        }
+        .arrow {
+            width: 0; 
+            height: 0; 
+            border-top: 15px solid #007bff;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            margin: -10px 0 10px 0;
+        }
+        .details {
+            font-size: 1em;
+            color: #555;
+            margin-top: 10px;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin: 0 auto 10px auto;
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="he"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;תרשים זרימה גרפי&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>direction: rtl;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f9f9f9;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.flowchart {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.step {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #007bff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 60%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0,0,0,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.step:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.05);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.arrow {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 0;<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 0;<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top: 15px solid #007bff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-left: 15px solid transparent;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-right: 15px solid transparent;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: -10px 0 10px 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.details {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1em;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #555;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #007bff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.step-icon {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 50px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 50px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #007bff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5em;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto 10px auto;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;תרשים זרימה לתהליך הטמעת מערכת אוטומציה בעסק קטן&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="flowchart"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="step-icon"&gt;1&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;פרסום&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="details"&gt;פרסום השירותים דרך מט"י והיועצים.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="arrow"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="step-icon"&gt;2&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;שיחת סגירה&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="details"&gt;הסבר מפורט של מט"י על החבילות.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="arrow"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="step-icon"&gt;3&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;שיחת הכרות וסגירה של החבילה&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="details"&gt;שיחה עם אוטומט"י, הכרות עם צרכי הלקוח, הצגה ראשונית של הפתרונות האפשריים, פתיחת חשבונות של שירותים מרכזיים.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="arrow"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="step-icon"&gt;4&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;הכנה של חומרים ראשוניים&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="arrow"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="step-icon"&gt;5&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;שיחת הצגת מוצר ראשוני&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="details"&gt;קריאת כיוון, דיוקים בהתאם לצרכי הלקוח.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="arrow"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="step-icon"&gt;6&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;דיוקים, חיבוריות, שיוף המוצרים&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="details"&gt;התאמת המוצרים לצרכים המדויקים של הלקוח.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="arrow"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="step-icon"&gt;7&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;שיחת הגשה&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="details"&gt;מיגרציה של חומרים למערכת, התחלה של שימוש בהם, הסבר על המערכת.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="arrow"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="step-icon"&gt;8&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;שבועיים אחרי - שיחת בדיקת שביעות רצון&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="details"&gt;מתן תשובות לשאלות הלקוח, בדיקת שביעות רצון הלקוח מהמערכת.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <h1>תרשים זרימה לתהליך הטמעת מערכת אוטומציה בעסק קטן</h1>
+    <div class="flowchart">
+        <div class="step">
+            <div class="step-icon">1</div>
+            <strong>פרסום</strong>
+            <div class="details">פרסום השירותים דרך מט"י והיועצים.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="step">
+            <div class="step-icon">2</div>
+            <strong>שיחת סגירה</strong>
+            <div class="details">הסבר מפורט של מט"י על החבילות.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="step">
+            <div class="step-icon">3</div>
+            <strong>שיחת הכרות וסגירה של החבילה</strong>
+            <div class="details">שיחה עם אוטומט"י, הכרות עם צרכי הלקוח, הצגה ראשונית של הפתרונות האפשריים, פתיחת חשבונות של שירותים מרכזיים.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="step">
+            <div class="step-icon">4</div>
+            <strong>הכנה של חומרים ראשוניים</strong>
+        </div>
+        <div class="arrow"></div>
+        <div class="step">
+            <div class="step-icon">5</div>
+            <strong>שיחת הצגת מוצר ראשוני</strong>
+            <div class="details">קריאת כיוון, דיוקים בהתאם לצרכי הלקוח.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="step">
+            <div class="step-icon">6</div>
+            <strong>דיוקים, חיבוריות, שיוף המוצרים</strong>
+            <div class="details">התאמת המוצרים לצרכים המדויקים של הלקוח.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="step">
+            <div class="step-icon">7</div>
+            <strong>שיחת הגשה</strong>
+            <div class="details">מיגרציה של חומרים למערכת, התחלה של שימוש בהם, הסבר על המערכת.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="step">
+            <div class="step-icon">8</div>
+            <strong>שבועיים אחרי - שיחת בדיקת שביעות רצון</strong>
+            <div class="details">מתן תשובות לשאלות הלקוח, בדיקת שביעות רצון הלקוח מהמערכת.</div>
+        </div>
+    </div>
 </body>
 </html>
